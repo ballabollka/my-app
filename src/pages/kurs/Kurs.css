@@ -1,0 +1,164 @@
+
+
+.section_kurs {
+    margin-bottom: 63px;
+
+
+}
+
+.container_kurs {
+    max-width: 1780px; /* Добавлены px */
+    margin: 0 auto;
+ 
+
+}
+
+
+.kurs h2 {
+    font-size: 35px;
+    margin-bottom: 16px;
+    color: #e4e3e3;
+    font-weight: bold;
+}
+
+
+
+.section h1 {
+    font-size: 80px;
+    text-align: center;
+    font-family: Georgia;
+
+
+}
+
+
+.kurs {
+    position: relative;
+    background-color: #6a0dad;
+    padding: 30px;
+    border: solid 3px #570f80;
+    border-radius: 20px;
+    text-align: left;
+    color: #e4e3e3;
+    font-size: 18px;
+    width: 100%; /* Занимает всю ширину ячейки сетки */
+    box-sizing: border-box; /* Учитывает padding в общей ширине */
+    min-height: 300px; /* Фиксированная высота для одинаковых карточек */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределение контента по высоте */
+}
+
+.kurs_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    justify-content: center; /* Центрирование сетки */
+}
+
+.kurs-icon {
+    width: 150px;
+    height: 150px;
+    align-self:flex-end; 
+
+
+
+  }
+
+.bb_kurs {
+    margin-top: auto; /* Кнопка прижимается к низу */
+    align-self: flex-start; /* Центрирование кнопки */
+    background-color: #e4e3e3 ;
+    color: black;
+    border-radius: 24px;
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px;
+    font-family: sans-serif
+
+}
+
+
+.b_kurs {
+    margin-bottom: 10px; /* Кнопка прижимается к низу */
+    align-self: flex-start; /* Центрирование кнопки */
+    background-color: #e4e3e3 ;
+    color: black;
+    border-radius: 24px;
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px;
+    font-family: sans-serif
+
+}
+
+
+.kurs_polosa{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: auto;
+
+    
+   
+}
+
+.bb_polosa{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: #570f80;
+    font-size: 20px;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    color: aliceblue;
+}
+
+
+.kurs_polosa p{
+    font-size: 35px;
+    text-align: left;
+    padding-left: 450px;
+    padding-top: 30px;
+    
+
+}
+
+.kurs_polosa h1{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: left;
+    padding-left: 350px;
+  
+    
+
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #e4e3e3;
+  color: #570f80;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.tab-button:hover {
+  background-color: #d0c0e0;
+}
+
+.tab-button.active {
+  background-color: #570f80;
+  color: #e4e3e3;
+}

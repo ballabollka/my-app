@@ -1,0 +1,78 @@
+.kabunet {
+    background-image: url('../../img/fon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фон фиксируется при скролле */
+    min-height: 100vh;
+    padding: 20px;
+    display: flex; /* Добавляем flex-контейнер */
+  justify-content: flex-end; /* Выравниваем содержимое по правому краю */
+  align-items: flex-start; /* Выравниваем по верхнему краю */
+  padding-top: 100px; /* Отступ сверху для всей страницы */
+
+
+  }
+.kabunet h1{
+  font-size: 45px;
+  color: rgb(42, 42, 42);
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+
+.welcome-section {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    color: white;
+    text-align: left;
+}
+
+
+
+
+
+  .form {
+    width: 600px;
+    padding: 80px 120px;
+    background-color: rgba(76, 59, 98, 0.8);
+    border-radius: 15px;
+    margin-right: 50px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .form_input {
+    width: 100%;
+    background-color: #1f2937;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 30px;
+    color: rgb(253, 253, 253);
+    font-size: 18px;
+  }
+  
+  .form_button {
+    width: 200px;
+    margin: 15px;
+    padding: 15px;
+    background-color: #570f80;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button_k {
+    width: 150px;
+    margin: 15px;
+    padding: 8px;
+    background-color: rgb(205, 143, 228);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+

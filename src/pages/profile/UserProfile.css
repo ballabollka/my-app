@@ -1,0 +1,45 @@
+.user-profile-title {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 1.2px;
+}
+
+.user-profile-container {
+  max-width: 600px;      /* увеличили ширину */
+  margin: 0 auto 60px auto;  /* центрируем, снизу отступ */
+  padding: 40px 35px;    /* увеличили паддинг */
+  background-color: #f7f9fc;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12); /* чуть сильнее тень */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.user-profile-field {
+  margin-bottom: 22px;    /* чуть больше отступ */
+  font-size: 20px;        /* больше шрифт */
+  line-height: 1.5;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.user-profile-label {
+  font-weight: 700;
+  color: #34495e;
+  margin-right: 12px;
+}
+
+.user-profile-loading,
+.user-profile-error {
+  text-align: center;
+  font-size: 20px;
+  padding: 50px 0;
+  color: #999;
+}
+
+.user-profile-error {
+  color: #e74c3c;
+}
