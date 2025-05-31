@@ -1,3 +1,4 @@
+/* 🔷 Заголовок */
 .user-profile-title {
   text-align: center;
   margin: 40px 0 20px 0;
@@ -7,20 +8,23 @@
   letter-spacing: 1.2px;
 }
 
+/* 🔹 Контейнер профиля */
 .user-profile-container {
-  max-width: 600px;      /* увеличили ширину */
-  margin: 0 auto 60px auto;  /* центрируем, снизу отступ */
-  padding: 40px 35px;    /* увеличили паддинг */
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  padding: 40px 35px;
   background-color: #f7f9fc;
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12); /* чуть сильнее тень */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
+  box-sizing: border-box;
 }
 
+/* 🔸 Поля профиля */
 .user-profile-field {
-  margin-bottom: 22px;    /* чуть больше отступ */
-  font-size: 20px;        /* больше шрифт */
+  margin-bottom: 22px;
+  font-size: 20px;
   line-height: 1.5;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
@@ -32,6 +36,7 @@
   margin-right: 12px;
 }
 
+/* 🔺 Сообщения загрузки и ошибки */
 .user-profile-loading,
 .user-profile-error {
   text-align: center;
@@ -42,4 +47,56 @@
 
 .user-profile-error {
   color: #e74c3c;
+}
+
+/* 📱 Адаптация: Телефоны до 600px */
+@media (max-width: 600px) {
+  .user-profile-container {
+    width: 94%;
+    padding: 25px 20px;
+    margin: 0 auto 40px auto;
+  }
+
+  .user-profile-title {
+    font-size: 24px;
+    margin: 30px 0 15px 0;
+  }
+
+  .user-profile-field {
+    font-size: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+  }
+
+  .user-profile-loading,
+  .user-profile-error {
+    font-size: 18px;
+    padding: 40px 0;
+  }
+}
+
+/* 📱 Адаптация: Планшеты 601px – 900px */
+@media (max-width: 900px) and (min-width: 601px) {
+  .user-profile-container {
+    width: 92%;
+    padding: 30px 25px;
+    margin: 0 auto 50px auto;
+  }
+
+  .user-profile-title {
+    font-size: 28px;
+    margin: 35px 0 18px 0;
+  }
+
+  .user-profile-field {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+  }
+
+  .user-profile-loading,
+  .user-profile-error {
+    font-size: 19px;
+    padding: 45px 0;
+  }
 }

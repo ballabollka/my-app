@@ -1,50 +1,109 @@
 .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding-top: 50px; /* Компенсируем отрицательный translateY */
-    margin-bottom: 50px; /* Добавляем место снизу */
-    overflow: visible; /* Разрешаем выход за границы */
-  }
-  
-  .card {
-    background: white;
-    border-radius: 15px;
-    border: solid 5px #570f80;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: relative; /* Для корректного z-index */
-  }
-  .card h1{
-    font-size: 30px;
-    font-weight: bold;
-    color: #000000;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  overflow: visible;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  border: solid 5px #570f80;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.zagolovok {
+  font-size: 50px;
+  font-weight: bold;
+  color: #570f80;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card:nth-child(odd) {
+  transform: translateY(-50px);
+  z-index: 1;
+}
+
+/* 📱 Телефоны (до 768px) */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 12px;
+    padding-top: 0;
   }
 
-  .card p{
-    margin-top: 20px;
-    font-size: 20px;
+  .card {
+    padding: 20px;
   }
-  .zagolovok{
-    font-size: 50px;
-    font-weight: bold;
-    color: #570f80;
+
+  .card h1 {
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 20px;
   }
-  
+
+  .card p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .zagolovok {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
   .card:nth-child(odd) {
-    transform: translateY(-50px);
-    z-index: 1; /* Поднимаем выше соседних карточек */
+    transform: none;
   }
-  
-  @media (max-width: 768px) {
-    .cards {
-      padding-top: 0; /* На мобильных убираем компенсацию */
-    }
-    .card:nth-child(odd) {
-      transform: none;
-    }
+}
+
+/* 📱 Планшеты (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px 16px;
   }
+
+  .card h1 {
+    font-size: 26px;
+  }
+
+  .card p {
+    font-size: 18px;
+  }
+
+  .zagolovok {
+    font-size: 40px;
+  }
+}
+
+/* 💻 Небольшие ноутбуки (1025px–1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .cards {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .zagolovok {
+    font-size: 45px;
+  }
+}

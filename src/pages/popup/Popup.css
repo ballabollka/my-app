@@ -1,3 +1,4 @@
+/* 🌑 Затемнение фона */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -9,8 +10,10 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 }
 
+/* 📦 Содержимое модального окна */
 .popup-content {
   background-color: white;
   padding: 30px;
@@ -19,8 +22,10 @@
   width: 90%;
   position: relative;
   animation: fadeIn 0.3s;
+  box-sizing: border-box;
 }
 
+/* ❌ Кнопка закрытия */
 .popup-close {
   position: absolute;
   top: 10px;
@@ -32,18 +37,21 @@
   color: #570f80;
 }
 
+/* Заголовок */
 .popup-content h2 {
   color: #570f80;
   margin-bottom: 15px;
   text-align: center;
 }
 
+/* Подпись / текст */
 .popup-content p {
   color: #666;
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* 📝 Форма */
 .popup-form {
   display: flex;
   flex-direction: column;
@@ -77,7 +85,60 @@
   background-color: #6a0dad;
 }
 
+/* 🎞️ Анимация */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Телефоны: до 600px */
+@media (max-width: 600px) {
+  .popup-content {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .popup-close {
+    font-size: 22px;
+    top: 8px;
+    right: 10px;
+  }
+
+  .popup-form input,
+  .popup-form button {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .popup-content h2 {
+    font-size: 20px;
+  }
+
+  .popup-content p {
+    font-size: 14px;
+  }
+}
+
+/* 📱 Планшеты: 601px–900px */
+@media (max-width: 900px) and (min-width: 601px) {
+  .popup-content {
+    width: 95%;
+    padding: 25px;
+    border-radius: 14px;
+  }
+
+  .popup-form input,
+  .popup-form button {
+    font-size: 16px;
+    padding: 11px 14px;
+  }
+
+  .popup-content h2 {
+    font-size: 22px;
+  }
+
+  .popup-content p {
+    font-size: 15px;
+  }
 }

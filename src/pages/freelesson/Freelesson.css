@@ -1,12 +1,9 @@
-
-
-
 .free-lesson-form-container {
   background: url('../../img/fon.jpg') no-repeat center center;
   background-size: cover;
   padding: 40px 0;
   margin: 60px 0;
-  position: relative; /* Для псевдоэлемента затемнения */
+  position: relative;
 }
 
 .free-lesson-form {
@@ -64,4 +61,61 @@
 
 .submit-btn:hover {
   background-color: #6a0dad;
+}
+
+/* 📱 Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+  .free-lesson-form-container {
+    padding: 30px 15px;
+    margin: 40px 0;
+  }
+
+  .free-lesson-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .free-lesson-form h2 {
+    font-size: 22px;
+  }
+
+  .free-lesson-form p {
+    font-size: 15px;
+  }
+
+  .form-group input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+}
+
+/* 📱 Планшеты (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .free-lesson-form-container {
+    padding: 40px 20px;
+  }
+
+  .free-lesson-form {
+    padding: 25px;
+  }
+
+  .free-lesson-form h2 {
+    font-size: 26px;
+  }
+
+  .free-lesson-form p {
+    font-size: 16px;
+  }
+}
+
+/* 💻 Небольшие ноутбуки (1025px–1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .free-lesson-form-container {
+    padding: 50px 30px;
+  }
 }

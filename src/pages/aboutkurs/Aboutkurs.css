@@ -47,7 +47,6 @@
   margin-top: 0.5rem;
 }
 
-/* 🔵 Кнопка "Записаться" */
 .enroll-button {
   display: inline-block;
   margin-top: 2rem;
@@ -66,9 +65,78 @@
   background-color: #1565c0;
 }
 
-/* 📱 Адаптивность */
-@media (max-width: 600px) {
+/* 📱 Адаптивность для телефонов */
+@media (max-width: 768px) {
   .course-details {
-    padding: 20px 10px;
+    padding: 20px 12px;
+  }
+
+  .course-details h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .course-details h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .course-details p,
+  .lesson-list li {
+    font-size: 1rem;
+  }
+
+  .lesson-list li {
+    padding: 10px 14px;
+  }
+
+  .price {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .enroll-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+    text-align: center;
+  }
+}
+
+/* Планшеты (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .course-details {
+    padding: 30px 18px;
+  }
+
+  .course-details h1 {
+    font-size: 2.2rem;
+  }
+
+  .course-details h2 {
+    font-size: 1.6rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .enroll-button {
+    font-size: 1.05rem;
+  }
+}
+
+/* Небольшие ноутбуки и экраны (1025px–1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .course-details {
+    padding: 35px 20px;
+  }
+
+  .course-details h1 {
+    font-size: 2.4rem;
+  }
+
+  .course-details h2 {
+    font-size: 1.7rem;
   }
 }

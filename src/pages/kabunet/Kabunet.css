@@ -76,3 +76,104 @@
   }
 
 
+  /* 📱 Адаптация для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+  .kabunet {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 100px 20px 20px;
+    background-attachment: scroll; /* фиксированный фон отключаем */
+  }
+
+  .form {
+    width: 100%;
+    padding: 40px 20px;
+    margin: 0 auto;
+  }
+
+  .form_input {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .form_button, .button_k {
+    width: 100%;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 12px;
+  }
+
+  .welcome-section {
+    position: static;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+  }
+
+  .kabunet h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+/* 📲 Планшеты (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .kabunet {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  .form {
+    width: 80%;
+    padding: 50px;
+    margin-right: 0;
+  }
+
+  .form_button, .button_k {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .welcome-section {
+    position: static;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .kabunet h1 {
+    font-size: 36px;
+  }
+}
+
+/* 💻 Небольшие ноутбуки (1025px–1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .form {
+    width: 500px;
+    padding: 60px 100px;
+    margin-right: 40px;
+  }
+
+  .form_button {
+    width: 180px;
+    font-size: 15px;
+  }
+
+  .button_k {
+    width: 130px;
+    font-size: 14px;
+  }
+
+  .kabunet h1 {
+    font-size: 40px;
+  }
+
+  .welcome-section {
+    top: 80px;
+    left: 30px;
+  }
+}
+
+
+

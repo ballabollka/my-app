@@ -1,3 +1,17 @@
+/* 📦 Сброс для безопасности */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 💳 Основной контейнер оплаты */
 .pay-container {
   max-width: 480px;
   margin: 40px auto;
@@ -5,10 +19,11 @@
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(32, 33, 36, 0.28);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
+  width: 100%;
 }
 
+/* Заголовок */
 .pay-title {
   text-align: center;
   font-weight: 700;
@@ -18,6 +33,7 @@
   user-select: none;
 }
 
+/* Селектор курса */
 .course-selection {
   margin-bottom: 30px;
 }
@@ -36,7 +52,6 @@
   font-size: 1rem;
   border-radius: 10px;
   border: 1.8px solid #ccc;
-  box-sizing: border-box;
   transition: border-color 0.25s ease;
   cursor: pointer;
 }
@@ -48,6 +63,7 @@
   box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
 }
 
+/* Инфо о платеже */
 .payment-info {
   margin-top: 14px;
   font-weight: 600;
@@ -118,4 +134,63 @@
 
 .pay-button:active {
   background-color: #0d3c73;
+}
+
+/* 📱 Телефоны: до 600px */
+@media (max-width: 600px) {
+  .pay-container {
+    margin: 20px auto;
+    padding: 18px 14px;
+    width: 94%;
+    max-width: 94%;
+  }
+
+  .pay-title {
+    font-size: 1.6rem;
+  }
+
+  .course-select,
+  .form-group input {
+    font-size: 0.9rem;
+    padding: 9px 10px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pay-button {
+    font-size: 0.95rem;
+    padding: 11px 0;
+  }
+}
+
+/* 📱 Планшеты: 601px–900px */
+@media (max-width: 900px) and (min-width: 601px) {
+  .pay-container {
+    margin: 30px auto;
+    padding: 22px 18px;
+    width: 92%;
+    max-width: 92%;
+  }
+
+  .pay-title {
+    font-size: 1.85rem;
+  }
+
+  .course-select,
+  .form-group input {
+    font-size: 0.95rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pay-button {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
 }
