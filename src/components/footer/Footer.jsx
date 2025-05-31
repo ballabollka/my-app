@@ -18,7 +18,7 @@ const Footer = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/api/newsletter/subscribe/', {
+      const response = await fetch('https://my-project-1-i05n.onrender.com/api/newsletter/subscribe/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
