@@ -9,7 +9,7 @@ const Kurs = () => {
 
   // Загрузка данных с бэка
   useEffect(() => {
-    axios.get('http://localhost:8000/courses/api/courses/')
+    axios.get('https://my-project-1-i05n.onrender.com/courses/api/courses/')
       .then(response => {
         setCourses(response.data);
       })
