@@ -7,16 +7,19 @@ const Kurs = () => {
   const [activeTab, setActiveTab] = useState('kids');
   const [courses, setCourses] = useState([]);
 
-  // Загрузка данных с бэка
+  // Берём API URL из переменной окружения
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
-    axios.get('https://my-project-1-i05n.onrender.com/courses/api/courses/')
+    // Используем переменную API_URL вместо хардкода
+    axios.get(`${API_URL}/courses/api/courses/`)
       .then(response => {
         setCourses(response.data);
       })
       .catch(error => {
         console.error("Ошибка при загрузке курсов:", error);
       });
-  }, []);
+  }, [API_URL]);
 
   const filteredCourses = courses.filter(course => course.age_group === activeTab);
 
