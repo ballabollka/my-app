@@ -50,15 +50,14 @@ const Footer = () => {
           <ul>
             <li><a href="#courses">Курсы</a></li>
             <li><a href="#about">О нас</a></li>
-            <li><a href="#contact">Контакты</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
 
         <div className="footer_contacts">
           <h3>Контакты</h3>
-          <p>Телефон: +1 (234) 567-890</p>
-          <p>Email: contact@school.com</p>
+          <p>Телефон: +7 (994) 016-18-97</p>
+          <p>Email: programschool@gmail.com</p>
         </div>
       </div>
 
