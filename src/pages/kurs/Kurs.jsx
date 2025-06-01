@@ -52,7 +52,7 @@ const Kurs = () => {
                 <p>Длительность курса: {course.duration}</p>
                 <p>Продолжительность урока: {course.lesson_time}</p>
                 <p>{course.description}</p>
-                {course.image_url && <img src={course.image_url} alt='info' className='kurs-icon' />}
+{/* {course.image_url && <img src={course.image_url} alt='info' className='kurs-icon' />} */}
                 <Link to="/aboutkurs1" className="b_kurs">подробнее</Link>
                 <Link to="/register" className="bb_kurs">записаться</Link>
               </div>
