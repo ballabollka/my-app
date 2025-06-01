@@ -1,4 +1,3 @@
-// src/pages/register/Register.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
@@ -15,6 +14,9 @@ const Register = () => {
     const navigate = useNavigate();
     const [errors, setErrors] = useState(null);
 
+    // ✅ Берём URL из переменной окружения
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -23,7 +25,7 @@ const Register = () => {
     const handleInputSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/register/', {
+            const response = await fetch(`${API_URL}/register/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +125,6 @@ const Register = () => {
                         Зарегистрироваться
                     </button>
 
-                    {/* 💬 Сноска о платеже */}
                     <p className="info-note">
                         Оплата курса будет доступна после регистрации. 
                     </p>
