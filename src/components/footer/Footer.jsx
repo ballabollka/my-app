@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  // <-- импортируем Link
 import './Footer.css';
 
 const Footer = () => {
-
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -48,9 +48,9 @@ const Footer = () => {
         <div className="footer_links">
           <h3>Полезные ссылки</h3>
           <ul>
-            <li><a href="#courses">Курсы</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><Link to="/kurs">Курсы</Link></li>
+            <li><Link to="/contacts">О нас</Link></li>
+            <li><Link to="/kabunet">Личный кабинет</Link></li>  {/* Добавил Личный кабинет */}
           </ul>
         </div>
 
