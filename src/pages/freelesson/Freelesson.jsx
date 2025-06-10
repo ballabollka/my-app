@@ -26,7 +26,7 @@ const Freelesson = () => {
   return (
     <div className="free-lesson-form-container">
       <div className="free-lesson-form">
-        <h2>Запишитесь на бесплатный урок</h2>
+        <h2>Запишитесь на  консультацию</h2>
         <p>Оставьте заявку и наши менеджеры свяжутся с вами в течение 15 минут</p>
         
         <form onSubmit={handleSubmit}>

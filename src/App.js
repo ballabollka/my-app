@@ -14,6 +14,7 @@ import ProtectedRoute from './pages/kabunet/ProtectedRoute'
 import Aboutkurs1 from './pages/aboutkurs/Aboutkurs1';
 import Pay from './pages/pay/Pay';
 import UserProfile from './pages/profile/UserProfile';
+import CourseDetails from './pages/coursedetails/CourseDetails';
 
 
 
@@ -33,6 +34,7 @@ function App() {
       <Route path='/freelesson' element={ <> <Header/> <Freelesson/> </>}/>
       <Route path='/register' element={<Register/>}/>
        <Route path="/home" element={ <> <Header/> <Home /> <Footer/> </>} />
+       <Route path="/courses/:id" element={<CourseDetails />} />
 
        <Route path="/kurs" element={
           <ProtectedRoute>
@@ -44,9 +46,6 @@ function App() {
         <Route path="/pay" element={<> <Header /><Pay /><Footer /> </>} />
         <Route path="/profile" element={<> <Header /> <UserProfile /> <Footer /> </>} />
 
-
-
-        
       </Routes>
 
    

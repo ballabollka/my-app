@@ -1,0 +1,142 @@
+.course-details {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d2d2d;
+  background-color: #ffffff;
+}
+
+.course-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0d47a1;
+}
+
+.course-details h2 {
+  font-size: 1.75rem;
+  margin: 2rem 0 1rem;
+  color: #1565c0;
+}
+
+.course-details p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.lesson-list li {
+  background: #f1f8ff;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  border-left: 4px solid #1976d2;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-top: 0.5rem;
+}
+
+.enroll-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 14px 24px;
+  background-color: #1976d2;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enroll-button:hover {
+  background-color: #1565c0;
+}
+
+/* 📱 Адаптивность для телефонов */
+@media (max-width: 768px) {
+  .course-details {
+    padding: 20px 12px;
+  }
+
+  .course-details h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .course-details h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .course-details p,
+  .lesson-list li {
+    font-size: 1rem;
+  }
+
+  .lesson-list li {
+    padding: 10px 14px;
+  }
+
+  .price {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .enroll-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+    text-align: center;
+  }
+}
+
+/* Планшеты (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .course-details {
+    padding: 30px 18px;
+  }
+
+  .course-details h1 {
+    font-size: 2.2rem;
+  }
+
+  .course-details h2 {
+    font-size: 1.6rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .enroll-button {
+    font-size: 1.05rem;
+  }
+}
+
+/* Небольшие ноутбуки и экраны (1025px–1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .course-details {
+    padding: 35px 20px;
+  }
+
+  .course-details h1 {
+    font-size: 2.4rem;
+  }
+
+  .course-details h2 {
+    font-size: 1.7rem;
+  }
+}

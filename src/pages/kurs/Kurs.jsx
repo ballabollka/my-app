@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Kurs.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Kurs = () => {
@@ -9,6 +9,9 @@ const Kurs = () => {
 
   // Берём API URL из переменной окружения
   const API_URL = process.env.REACT_APP_API_URL;
+
+  // Инициализируем навигацию
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Используем переменную API_URL вместо хардкода
@@ -22,6 +25,11 @@ const Kurs = () => {
   }, [API_URL]);
 
   const filteredCourses = courses.filter(course => course.age_group === activeTab);
+
+  // Обработчик клика на кнопку "оставить заявку"
+  const handleConsultationClick = () => {
+    navigate('/freelesson');
+  };
 
   return (
     <div className='section_kurs'>
@@ -52,8 +60,7 @@ const Kurs = () => {
                 <p>Длительность курса: {course.duration}</p>
                 <p>Продолжительность урока: {course.lesson_time}</p>
                 <p>{course.description}</p>
-{/* {course.image_url && <img src={course.image_url} alt='info' className='kurs-icon' />} */}
-                <Link to="/aboutkurs1" className="b_kurs">подробнее</Link>
+                <Link to={`/courses/${course.id}`} className="b_kurs">подробнее</Link>
                 <Link to="/register" className="bb_kurs">записаться</Link>
               </div>
             ))}
@@ -64,7 +71,7 @@ const Kurs = () => {
       <div className='kurs_polosa'>
         <h1>Не знаете что выбрать?</h1>
         <p>Оставьте заявку на бесплатную консультацию: мы поможем с выбором 🧠</p>
-        <button className='bb_polosa'>оставить заявку</button>
+        <button className='bb_polosa' onClick={handleConsultationClick}>оставить заявку</button>
       </div>
     </div>
   );
