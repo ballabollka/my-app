@@ -11,7 +11,7 @@ const CourseDetails = () => {
   const API_URL = process.env.REACT_APP_API_URL;  // например 'http://127.0.0.1:8000'
 
   useEffect(() => {
-    axios.get(`${API_URL}/courses/api/courses/${id}/`)  // Важно: слеш в конце!
+    axios.get(`${API_URL}/courses/api/courses/${id}/`)  
       .then(response => {
         setCourse(response.data);
       })

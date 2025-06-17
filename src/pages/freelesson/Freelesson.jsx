@@ -17,7 +17,7 @@ const Freelesson = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Здесь можно добавить логику отправки формы
+
     console.log('Форма отправлена:', formData);
     alert('Спасибо за заявку! Мы свяжемся с вами в течение 15 минут.');
     setFormData({ name: '', phone: '' });
