@@ -11,19 +11,85 @@ const Register = () => {
         password: '',
     });
 
-    const navigate = useNavigate();
-    const [errors, setErrors] = useState(null);
+    const [errors, setErrors] = useState({
+        firstname: '',
+        lastname: '',
+        phone: '',
+        email: '',
+        password: '',
+        general: ''
+    });
 
-    // ✅ Берём URL из переменной окружения
+    const navigate = useNavigate();
     const API_URL = process.env.REACT_APP_API_URL;
+
+    // Валидация полей
+    const validateField = (name, value) => {
+        let error = '';
+        
+        switch (name) {
+            case 'firstname':
+            case 'lastname':
+                if (!value.trim()) error = 'Обязательное поле';
+                else if (!/^[а-яА-ЯёЁa-zA-Z- ]+$/.test(value)) error = 'Только буквы и дефисы';
+                break;
+            case 'phone':
+                if (!value.trim()) error = 'Обязательное поле';
+                else if (!/^[\d+][\d() -]{9,}$/.test(value)) error = 'Некорректный номер';
+                break;
+            case 'email':
+                if (!value.trim()) error = 'Обязательное поле';
+                else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = 'Некорректный email';
+                break;
+            case 'password':
+                if (!value.trim()) error = 'Обязательное поле';
+                else if (value.length < 8) error = 'Минимум 8 символов';
+                break;
+            default:
+                break;
+        }
+        
+        return error;
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        
+        // Валидация при изменении
+        setErrors({
+            ...errors,
+            [name]: validateField(name, value),
+            general: '' // Сбрасываем общую ошибку при изменении поля
+        });
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+        let isValid = true;
+
+        // Проверяем все поля
+        Object.keys(formData).forEach(key => {
+            const error = validateField(key, formData[key]);
+            newErrors[key] = error;
+            if (error) isValid = false;
+        });
+
+        setErrors(newErrors);
+        return isValid;
     };
 
     const handleInputSubmit = async (e) => {
         e.preventDefault();
+        
+        if (!validateForm()) {
+            setErrors(prev => ({
+                ...prev,
+                general: 'Пожалуйста, исправьте ошибки в форме'
+            }));
+            return;
+        }
+
         try {
             const response = await fetch(`${API_URL}/register/`, {
                 method: 'POST',
@@ -48,11 +114,21 @@ const Register = () => {
                 password: '',
             });
 
-            setErrors(null);
+            setErrors({
+                firstname: '',
+                lastname: '',
+                phone: '',
+                email: '',
+                password: '',
+                general: ''
+            });
 
             navigate('/pay');
         } catch (error) {
-            setErrors(error.message);
+            setErrors(prev => ({
+                ...prev,
+                general: error.message
+            }));
         }
     };
 
@@ -71,65 +147,75 @@ const Register = () => {
                 <form className='form' onSubmit={handleInputSubmit}>
                     <h1>Регистрация</h1>
 
-                    <input
-                        className='form_input'
-                        type='text'
-                        name='firstname'
-                        placeholder='Имя'
-                        value={formData.firstname}
-                        onChange={handleInputChange}
-                        required
-                    />
+                    <div className="input-group">
+                        <input
+                            className={`form_input ${errors.firstname ? 'error' : ''}`}
+                            type='text'
+                            name='firstname'
+                            placeholder='Имя'
+                            value={formData.firstname}
+                            onChange={handleInputChange}
+                        />
+                        {errors.firstname && <span className="error-message">{errors.firstname}</span>}
+                    </div>
 
-                    <input
-                        className='form_input'
-                        type='text'
-                        name='lastname'
-                        placeholder='Фамилия'
-                        value={formData.lastname}
-                        onChange={handleInputChange}
-                        required
-                    />
+                    <div className="input-group">
+                        <input
+                            className={`form_input ${errors.lastname ? 'error' : ''}`}
+                            type='text'
+                            name='lastname'
+                            placeholder='Фамилия'
+                            value={formData.lastname}
+                            onChange={handleInputChange}
+                        />
+                        {errors.lastname && <span className="error-message">{errors.lastname}</span>}
+                    </div>
 
-                    <input
-                        className='form_input'
-                        type='text'
-                        name='phone'
-                        placeholder='Телефон'
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                    />
+                    <div className="input-group">
+                        <input
+                            className={`form_input ${errors.phone ? 'error' : ''}`}
+                            type='text'
+                            name='phone'
+                            placeholder='Телефон'
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                        />
+                        {errors.phone && <span className="error-message">{errors.phone}</span>}
+                    </div>
 
-                    <input
-                        className='form_input'
-                        type='email'
-                        name='email'
-                        placeholder='Email'
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                    />
+                    <div className="input-group">
+                        <input
+                            className={`form_input ${errors.email ? 'error' : ''}`}
+                            type='email'
+                            name='email'
+                            placeholder='Email'
+                            value={formData.email}
+                            onChange={handleInputChange}
+                        />
+                        {errors.email && <span className="error-message">{errors.email}</span>}
+                    </div>
 
-                    <input
-                        className='form_input'
-                        type='password'
-                        name='password'
-                        placeholder='Пароль'
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        required
-                    />
+                    <div className="input-group">
+                        <input
+                            className={`form_input ${errors.password ? 'error' : ''}`}
+                            type='password'
+                            name='password'
+                            placeholder='Пароль'
+                            value={formData.password}
+                            onChange={handleInputChange}
+                        />
+                        {errors.password && <span className="error-message">{errors.password}</span>}
+                    </div>
 
                     <button className='form_button' type='submit'>
                         Зарегистрироваться
                     </button>
 
+                    {errors.general && <p className='error general-error'>{errors.general}</p>}
+
                     <p className="info-note">
                         Оплата курса будет доступна после регистрации. 
                     </p>
-
-                    {errors && <p className='error'>{errors}</p>}
 
                     <div className='text'>
                         <p>Уже есть аккаунт?</p>
