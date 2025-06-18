@@ -21,7 +21,7 @@ const Register = () => {
     });
 
     const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
     // Валидация полей
     const validateField = (name, value) => {
@@ -56,11 +56,10 @@ const Register = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
         
-        // Валидация при изменении
         setErrors({
             ...errors,
             [name]: validateField(name, value),
-            general: '' // Сбрасываем общую ошибку при изменении поля
+            general: ''
         });
     };
 
@@ -68,7 +67,6 @@ const Register = () => {
         const newErrors = {};
         let isValid = true;
 
-        // Проверяем все поля
         Object.keys(formData).forEach(key => {
             const error = validateField(key, formData[key]);
             newErrors[key] = error;
@@ -91,43 +89,32 @@ const Register = () => {
         }
 
         try {
-            const response = await fetch(`${API_URL}/register/`, {
+            const response = await fetch(`${API_URL}/api/register/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    firstname: formData.firstname,
+                    lastname: formData.lastname,
+                    email: formData.email,
+                    password: formData.password,
+                    phone: formData.phone
+                }),
             });
 
             if (!response.ok) {
-                const data = await response.json();
-                throw new Error(data.error || 'Ошибка регистрации');
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Ошибка регистрации');
             }
 
-            alert('Спасибо за регистрацию! Наш администратор свяжется с вами в течение 15 минут.');
-
-            setFormData({
-                firstname: '',
-                lastname: '',
-                phone: '',
-                email: '',
-                password: '',
-            });
-
-            setErrors({
-                firstname: '',
-                lastname: '',
-                phone: '',
-                email: '',
-                password: '',
-                general: ''
-            });
-
+            alert('Регистрация успешна!');
             navigate('/pay');
+            
         } catch (error) {
             setErrors(prev => ({
                 ...prev,
-                general: error.message
+                general: error.message || 'Ошибка соединения с сервером'
             }));
         }
     };
@@ -147,6 +134,7 @@ const Register = () => {
                 <form className='form' onSubmit={handleInputSubmit}>
                     <h1>Регистрация</h1>
 
+                    {/* Поля формы остаются без изменений */}
                     <div className="input-group">
                         <input
                             className={`form_input ${errors.firstname ? 'error' : ''}`}

@@ -20,7 +20,7 @@ const Kabunet = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://my-project-iygd.onrender.com/api/login/', {
+            const response = await fetch('https://my-project-iygd.onrender.com/login/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
