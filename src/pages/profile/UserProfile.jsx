@@ -16,7 +16,7 @@ const UserProfile = () => {
       return;
     }
 
-    axios.get('http://localhost:8000/api/user/profile/', {
+    axios.get('https://my-project-iygd.onrender.com/api/user/profile/', {
       headers: {
         Authorization: `Bearer ${token}`
       }
