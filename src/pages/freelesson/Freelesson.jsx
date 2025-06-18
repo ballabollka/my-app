@@ -24,7 +24,10 @@ const Freelesson = () => {
   };
 
   return (
+   
+            
     <div className="free-lesson-form-container">
+       
       <div className="free-lesson-form">
         <h2>Запишитесь на  консультацию</h2>
         <p>Оставьте заявку и наши менеджеры свяжутся с вами в течение 15 минут</p>
@@ -58,6 +61,7 @@ const Freelesson = () => {
         </form>
       </div>
     </div>
+    
 
   );
 };
